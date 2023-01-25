@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('ord_ymd', models.CharField(max_length=16, verbose_name='ORD_YMD')),
-                ('acct_mang_dorn_code', models.CharField(max_length=16, verbose_name='ACCT_MANG_DORN_CODE')),
+                ('acct_mang_dbrn_code', models.CharField(max_length=16, verbose_name='ACCT_MANG_DORN_CODE')),
                 ('ord_no', models.IntegerField(verbose_name='ORD_NO')),
                 ('acct_no', models.CharField(max_length=64, verbose_name='ACCT_NO')),
                 ('callv_type_code', models.CharField(max_length=32, verbose_name='CALLV_TYPE_CODE')),

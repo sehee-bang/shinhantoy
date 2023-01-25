@@ -2,22 +2,18 @@ from django.shortcuts import render
 from .models import Order
 from rest_framework import generics, mixins
 from .paginations import OrderLargePagination
-
+from .serializers import OrderSerializer
 # Create your views here.
 
 class OrderListView(
     mixins.ListModelMixin, 
-    mixins.CreateModelMixin,
     generics.GenericAPIView
 ):
-    pagination_class = OrderLargePagination
+
+    serializer_class = OrderSerializer
 
     def get_queryset(self):
-        
-        orders = Order.objects.all()
+        return Order.objects.all().order_by('-id')
 
     def get(self, request, *args, **kwargs):
         return self.list(request, args, kwargs)
-
-    def post(self, request, *args, **kwargs):
-        return self.create(request, args, kwargs)
