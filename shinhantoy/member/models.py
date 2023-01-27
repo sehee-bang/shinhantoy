@@ -13,10 +13,10 @@ class Member(AbstractUser): #AbstratctUser라는 클래스를 상속받음
     )
 
 #꼭 입력받아야 할 값 있을 때 지정 가능, createsuperuser 할 때 !
-REQUIRED_FILEDS=["tel"]
+    REQUIRED_FILEDS=["tel"]
 
 
-class Meta:
-    db_table= 'shinhan_member'
-    verbose_name='회원',
-    verbose_name_plural='회원'
+    class Meta:
+        db_table= 'shinhan_member'
+        verbose_name='회원',
+        verbose_name_plural='회원'
